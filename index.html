@@ -1,52 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Localisations</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Localisations | Afrique Bitume</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-      background: #f9f9f9;
+    :root{
+      --red:#e60000;
+      --red-dark:#cc0000;
+      --text:#111;
+      --card:#ffffff;
+      --bg:#f5f6f8;
+      --border:#e6e6e6;
     }
-    h1 {
-      margin-bottom: 40px;
-      color: #333;
+
+    * { box-sizing: border-box; }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, #fff 0%, #f7f7f7 60%, #f1f1f1 100%),
+        var(--bg);
+      min-height:100dvh;
+      display:grid;
+      place-items:center;
+      padding:24px;
     }
-    .btn {
-      display: inline-block;
-      margin: 10px;
-      padding: 15px 30px;
-      font-size: 18px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      background-color: #e60000; /* Rouge vif */
-      color: black;              /* Texte noir */
-      border: 2px solid #b30000; /* Contour rouge foncé */
-      transition: 0.3s;
+
+    .card{
+      width:100%;
+      max-width:520px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:28px 24px 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.06);
+      text-align:center;
     }
-    .btn:hover {
-      background-color: #cc0000; /* Rouge plus foncé au survol */
-      color: white;              /* Texte devient blanc au survol */
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+      margin-bottom:20px;
+    }
+
+    .brand img{
+      width:110px; height:auto;
+      display:block;
+      user-select:none;
+    }
+
+    .brand h1{
+      margin:0;
+      font-size:22px;
+      letter-spacing:.4px;
+      font-weight:700;
+    }
+
+    .subtitle{
+      margin:2px 0 22px 0;
+      color:#555;
+      font-size:14px;
+    }
+
+    .btns{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    @media (min-width:520px){
+      .btns{ grid-template-columns:1fr 1fr 1fr; }
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 16px;
+      border-radius:12px;
+      background:var(--red);
+      color:#000;               /* texte noir demandé */
+      text-decoration:none;
+      font-weight:700;
+      border:2px solid #b30000; /* liseré rouge foncé */
+      transition: transform .06s ease, box-shadow .2s ease, background .15s ease, color .15s ease;
+      box-shadow: 0 6px 14px rgba(230,0,0,.18);
+      outline: none;
+    }
+    .btn:hover{
+      background:var(--red-dark);
+      color:#fff;               /* contraste au survol */
+      box-shadow: 0 10px 18px rgba(204,0,0,.22);
+      transform: translateY(-1px);
+    }
+    .btn:active{
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(0,0,0,.12);
+    }
+    .btn:focus-visible{
+      box-shadow: 0 0 0 3px #000, 0 0 0 6px rgba(230,0,0,.5);
+    }
+
+    footer{
+      margin-top:18px;
+      font-size:12px;
+      color:#666;
     }
   </style>
 </head>
 <body>
-  <h1>Choisissez une ville</h1>
-  
-  <!-- Casablanca -->
-  <a href="https://www.google.com/maps/search/afrique+bitume+(tit+mellil)+casablanca/@33.4994735,-7.4834941,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D" 
-     target="_blank" class="btn">Casablanca</a>
-  
-  <!-- Agadir -->
-  <a href="https://www.google.com/maps/place/Drarga-AGADIR/@30.337072,-9.4855521,17z/data=!3m1!4b1!4m6!3m5!1s0xdb3c700780edb9d:0x80cde26f6df711c6!8m2!3d30.3370721!4d-9.4806812!16s%2Fg%2F11ygyh1_mj?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D" 
-     target="_blank" class="btn">Agadir</a>
-  
-  <!-- Nador -->
-  <a href="https://www.google.com/maps/place/Parco+industrial+de+Selouane/@35.0600402,-2.903782,18.05z/data=!4m6!3m5!1s0xd77a5b215555555:0x4e3325b90dc5b937!8m2!3d35.0606875!4d-2.9013125!16s%2Fg%2F11kj901h2g?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D" 
-     target="_blank" class="btn">Nador</a>
+
+  <main class="card" role="main">
+    <div class="brand">
+      <!-- Mets le bon nom de fichier du logo ici -->
+      <img src="./logo-afrique-bitume.png" alt="Logo Afrique Bitume" />
+      <h1>Localisations</h1>
+    </div>
+
+    <p class="subtitle">Choisissez une ville pour ouvrir l’itinéraire dans Google Maps.</p>
+
+    <nav class="btns" aria-label="Villes">
+      <!-- Casablanca -->
+      <a class="btn"
+         href="https://www.google.com/maps/search/afrique+bitume+(tit+mellil)+casablanca/@33.4994735,-7.4834941,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
+         target="_blank" rel="noopener" aria-label="Ouvrir Casablanca dans Google Maps">
+        Casablanca
+      </a>
+
+      <!-- Agadir -->
+      <a class="btn"
+         href="https://www.google.com/maps/place/Drarga-AGADIR/@30.337072,-9.4855521,17z/data=!3m1!4b1!4m6!3m5!1s0xdb3c700780edb9d:0x80cde26f6df711c6!8m2!3d30.3370721!4d-9.4806812!16s%2Fg%2F11ygyh1_mj?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
+         target="_blank" rel="noopener" aria-label="Ouvrir Agadir dans Google Maps">
+        Agadir
+      </a>
+
+      <!-- Nador -->
+      <a class="btn"
+         href="https://www.google.com/maps/place/Parco+industrial+de+Selouane/@35.0600402,-2.903782,18.05z/data=!4m6!3m5!1s0xd77a5b215555555:0x4e3325b90dc5b937!8m2!3d35.0606875!4d-2.9013125!16s%2Fg%2F11kj901h2g?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
+         target="_blank" rel="noopener" aria-label="Ouvrir Nador dans Google Maps">
+        Nador
+      </a>
+    </nav>
+
+    <footer>
+      © Afrique Bitume — Itinéraires Google Maps
+    </footer>
+  </main>
 
 </body>
 </html>
