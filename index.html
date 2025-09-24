@@ -7,7 +7,7 @@
   <style>
     :root{
       --red:#e60000;
-      --red-dark:#cc0000;
+      --black:#000000;
       --text:#111;
       --card:#ffffff;
       --bg:#f5f6f8;
@@ -31,7 +31,7 @@
 
     .card{
       width:100%;
-      max-width:520px;
+      max-width:620px;
       background:var(--card);
       border:1px solid var(--border);
       border-radius:20px;
@@ -73,8 +73,8 @@
       gap:12px;
     }
 
-    @media (min-width:520px){
-      .btns{ grid-template-columns:1fr 1fr 1fr; }
+    @media (min-width:620px){
+      .btns{ grid-template-columns:1fr 1fr; }
     }
 
     .btn{
@@ -84,18 +84,20 @@
       padding:14px 16px;
       border-radius:12px;
       background:var(--red);
-      color:#000;               /* texte noir demandé */
+      color:#fff;               /* texte blanc */
       text-decoration:none;
       font-weight:700;
-      border:2px solid #b30000; /* liseré rouge foncé */
-      transition: transform .06s ease, box-shadow .2s ease, background .15s ease, color .15s ease;
+      border:2px solid var(--red);
       box-shadow: 0 6px 14px rgba(230,0,0,.18);
       outline: none;
+      /* Transition fluide sur les couleurs et ombres */
+      transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.3s ease, transform 0.1s ease;
     }
     .btn:hover{
-      background:var(--red-dark);
-      color:#fff;               /* contraste au survol */
-      box-shadow: 0 10px 18px rgba(204,0,0,.22);
+      background:var(--black);  /* fond noir */
+      border-color:var(--black);
+      color:#fff;               /* texte blanc */
+      box-shadow: 0 10px 18px rgba(0,0,0,.25);
       transform: translateY(-1px);
     }
     .btn:active{
@@ -117,7 +119,6 @@
 
   <main class="card" role="main">
     <div class="brand">
-      <!-- Mets le bon nom de fichier du logo ici -->
       <img src="./logo-afrique-bitume.png" alt="Logo Afrique Bitume" />
       <h1>Localisations</h1>
     </div>
@@ -128,21 +129,28 @@
       <!-- Casablanca -->
       <a class="btn"
          href="https://www.google.com/maps/search/afrique+bitume+(tit+mellil)+casablanca/@33.4994735,-7.4834941,17z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
-         target="_blank" rel="noopener" aria-label="Ouvrir Casablanca dans Google Maps">
+         target="_blank" rel="noopener">
         Casablanca
+      </a>
+
+      <!-- Mohammedia -->
+      <a class="btn"
+         href="https://www.google.com/maps/place/Afrique+%C3%89tanch%C3%A9it%C3%A9+Sa+:+Fabrication+de+produits+d'%C3%A9tanch%C3%A9it%C3%A9,+panneaux+et+rev%C3%AAtements+isolants./@33.6895527,-7.4014399,17z/data=!3m1!4b1!4m6!3m5!1s0xda7b6e5dc3beb69:0xdd549eedc2327c7d!8m2!3d33.6895528!4d-7.396569!16s%2Fg%2F11b6j1j5r7?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D"
+         target="_blank" rel="noopener">
+        Mohammedia
       </a>
 
       <!-- Agadir -->
       <a class="btn"
          href="https://www.google.com/maps/place/Drarga-AGADIR/@30.337072,-9.4855521,17z/data=!3m1!4b1!4m6!3m5!1s0xdb3c700780edb9d:0x80cde26f6df711c6!8m2!3d30.3370721!4d-9.4806812!16s%2Fg%2F11ygyh1_mj?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
-         target="_blank" rel="noopener" aria-label="Ouvrir Agadir dans Google Maps">
+         target="_blank" rel="noopener">
         Agadir
       </a>
 
       <!-- Nador -->
       <a class="btn"
          href="https://www.google.com/maps/place/Parco+industrial+de+Selouane/@35.0600402,-2.903782,18.05z/data=!4m6!3m5!1s0xd77a5b215555555:0x4e3325b90dc5b937!8m2!3d35.0606875!4d-2.9013125!16s%2Fg%2F11kj901h2g?entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
-         target="_blank" rel="noopener" aria-label="Ouvrir Nador dans Google Maps">
+         target="_blank" rel="noopener">
         Nador
       </a>
     </nav>
